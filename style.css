@@ -1,0 +1,223 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+body {
+background: #222;
+}
+.hide {
+    visibility: hidden; 
+    opacity: 0;
+    transition: opacity 2.5s ease-in;
+}
+.show {
+    visibility: visible;
+    opacity: 1;
+  }
+
+.card {
+    width: 90%;
+    max-width: 80%;
+    background: linear-gradient(190deg, #C8AE7D, #65451F);
+    color: #19121261;
+    margin: 100px auto 0;
+    padding: 40px 35px;
+    text-align: center;
+    border-radius: 20px;
+    animation: reveal 2s ease-in 1;
+}
+
+.search {
+    width: 100%;
+    padding: 10%;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.searchbar{
+    animation: revealStatic 2.25s cubic-bezier(1, -0.01, 0.27, 0.86) 1;
+}
+
+.search input{
+    border: 0;
+    outline: 0;
+    background: #ebfffc;
+    color: #555;
+    padding: 10px 25px;
+    height: 60px;
+    border-radius: 30px;
+    flex: 1;
+    margin-right: 16px;
+    font-size: 18px;
+    animation: revealStatic 2.25s ease-in 1;
+    align-content: center;
+    
+}
+.search button {
+    border: 0;
+    outline: 0;
+    background: #ebfffc;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    animation: revealStatic 2.25s ease-in 1;
+}
+.search button img {
+    width: 16px;
+}
+.weather {
+    justify-content: center;
+    display: none;
+}
+
+@keyframes sweepLeft {
+    0%{
+        transform: translateX(-60px);
+        opacity: 0;
+    }
+    35% {
+        transform: rotate(0deg);
+    }
+    40% {
+        transform: rotate(20deg);
+    }
+    45% {
+        transform: rotate(-20deg);
+    }
+    50%{
+        transform: rotate(20deg);
+        transform: translateX(0px);
+        opacity: 1;
+    }
+    55% {
+        transform: rotate(-20deg);
+    }
+    60% {
+        transform: rotate(20deg);
+    }
+    65% {
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: translateX(60px);
+        opacity: 0;
+    }
+}
+
+@keyframes moveImageFast {
+        0% {
+            transform: translateY(-20);
+          }
+        25% {
+            transform: translateY(0);
+          }
+        25% {
+            transform: translateY(20);
+          }
+        50% {
+            transform: translateY(0);
+          }
+        75% {
+            transform: translateY(-20);
+          }
+        100% {
+            transform: translateY(0)
+        }
+        }
+@keyframes reveal {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+@keyframes revealStatic {
+        0% {
+            transform: translateY(-30px);
+          }
+          100% {
+            transform: translateY(0px);
+          }
+        }
+.fade-in {
+    animation: fadeInAnimation 1s ease-in 1;
+        }
+          
+@keyframes fadeInAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+         opacity: 1;
+        }
+    }
+.weather-icon {
+    width: 170px;
+    position: relative;
+    margin-top: 30px;
+}
+.clear:hover {
+    animation: sweepLeft 2s ease-in-out infinite;
+}
+.clouds:hover {
+    animation: sweepLeft 4s ease-in-out infinite;
+}
+.rain:hover {
+    animation: sweepLeft 4s ease-in-out infinite;
+}
+.mist:hover {
+    animation: sweepLeft 2s ease-in-out .5s infinite;
+}
+.snow:hover {
+    animation: sweepLeft 2s ease-in-out .5s infinite;
+}
+.weather h1 {
+    font-size: 80px;
+    font-weight: 500;
+
+}
+.weather h2 {
+    font-size: 45px;
+    font-weight: 400;
+    margin-top: -10px; 
+}
+.details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-top: 50px;
+}
+.col {
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+.col img{
+    width: 40px;
+    margin-right: 10px;
+}
+.temp {
+    padding-bottom: 20px;
+    font-family: '';
+}
+.humidity, .wind {
+    font-size: 28px;
+    margin-top: -6;
+}
+.error {
+    text-align: left;
+    margin-left: 10px;
+    font-size: 40px;
+    margin-top: 10px;
+    display: none;
+    animation: moveImageFast 1s   1;
+}
+
+
+
